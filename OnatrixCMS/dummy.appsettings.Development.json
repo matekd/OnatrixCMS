@@ -35,8 +35,10 @@
                 "Debug": true
             },
             "uSync": {
-                "ExportAtStartup": "All",
-                "ExportOnSave": true
+                "Settings": {
+                    "ExportAtStartup": "All",
+                    "ExportOnSave": true
+                }
             }
         }
     }
