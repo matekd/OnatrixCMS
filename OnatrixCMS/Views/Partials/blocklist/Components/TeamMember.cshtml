@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TeamMember)Model.Content;
+}
+
+<div class="team-item">
+    @if (@content.TeamMemberImage != null)
+    {
+        <img src="@content.TeamMemberImage.Url()" alt="@content.TeamMemberImage.Name" />
+    }
+    <div>
+        <h4>@content.TeamMemberName</h4>
+        <p>@content.TeamMemberRole</p>
+    </div>
+</div>
