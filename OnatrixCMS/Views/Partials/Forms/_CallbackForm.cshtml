@@ -1,0 +1,46 @@
+﻿@using OnatrixCMS.ViewModels
+@model CallbackViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "FormController", FormMethod.Post, new {novalidate = "novalidate", id = "callbackForm"}))
+{
+	<div class="form-body">
+
+		<div class="input-group">
+			@* <label asp-for="Name"></label> *@
+			<input asp-for="Name" placeholder="@Html.DisplayNameFor(x => x.Name)" />
+			<span asp-validation-for="Name"></span>
+		</div>
+
+		<div class="input-group">
+			@* <label asp-for="Email"></label> *@
+			<input asp-for="Email" placeholder="@Html.DisplayNameFor(x => x.Email)" />
+			<span asp-validation-for="Email"></span>
+		</div>
+
+		<div class="input-group">
+			@* <label asp-for="PhoneNumber"></label> *@
+			<input asp-for="PhoneNumber" placeholder="@Html.DisplayNameFor(x => x.PhoneNumber)" />
+			<span asp-validation-for="PhoneNumber"></span>
+		</div>
+
+		<div class="input-group select-group">
+			@* <label asp-for="PhoneNumber"></label> *@
+			<select asp-for="SelectedOption">
+				<option value="" disabled hidden selected></option>
+				<option value="Financial consulting">Financial consulting</option>
+				<option value="Statistics">Statistics</option>
+				<option value="Risk management">Risk management</option>
+			</select>
+
+			<span class="icon">
+				<i class="fa-solid fa-chevron-down"></i>
+			</span>
+
+			<span asp-validation-for="SelectedOption"></span>
+		</div>
+
+		<div>
+			<button type="submit">Submit</button>
+		</div>
+	</div>
+}
