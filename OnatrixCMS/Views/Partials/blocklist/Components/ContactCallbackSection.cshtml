@@ -1,0 +1,34 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using OnatrixCMS.ViewModels
+@{
+	var content = (ContentModels.ContactCallbackSection)Model.Content;
+}
+
+<section class="contact-callback">
+	<div class="map-img">
+		@if (content.FormBackgroundImage != null)
+		{
+			<img src="@content.FormBackgroundImage.Url()" />
+		}
+	</div>
+
+	<div class="container">
+		<div class="form-info">
+			@if (content.FormLabel != null)
+			{
+				<p class="label">@content.FormLabel</p>
+			}
+			@if (content.FormTitle != null)
+			{
+				<h2>@content.FormTitle</h2>
+			}
+			@if (content.FormBody != null)
+			{
+				<p>@content.FormBody</p>
+			}
+		</div>
+
+		<partial name="Partials/Forms/_CallbackForm" model="new CallbackViewModel()" />
+	</div>
+</section>
