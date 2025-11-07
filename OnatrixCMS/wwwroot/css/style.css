@@ -121,22 +121,25 @@ a:visited {
     font-weight: var(--font-bold);
     color: var(--beige);
 }
+
+/* --- Forms --- */
 input::placeholder {
     color: var(--gray-400);
     font-style: italic;
 }
-input, select, textarea {
+input, select, textarea, button {
     padding: 1rem;
     border: none;
     border-radius: .25rem;
     font-family: "Poppins", sans-serif;
     appearance: none;
 }
+input, select, textarea {
+    border: 1px solid var(--gray-100);
+    width: 100%;
+}
 input:focus, select:focus, textarea:focus {
     outline: none;
-}
-button {
-    border: none;
 }
 .btn-main, .btn-sub {
     cursor: pointer;
@@ -155,6 +158,30 @@ button {
     color: var(--main-clr);
     padding: 1rem 2rem;
     width: 100%;
+}
+.input-validation-error {
+    border: 1px red solid;
+}
+.input-validation-error:focus {
+    outline:red solid 1px;
+}
+.field-validation-error {
+    color: red;
+    font-size: .875rem;
+    font-weight: var(--font-medium);
+    display: block;
+}
+.select-group {
+    position: relative;
+    .icon {
+        position: absolute;
+        z-index: 100;
+        width: 15px;
+        height: 15px;
+        right: 15px;
+        top: 19px;
+        text-align: center;
+    }
 }
 
 /* --- SECTIONS --- */
@@ -405,10 +432,6 @@ nav {
           "phone select"
           "submit submit";
         gap: 1rem;
-        input, select, textarea {
-            border: 1px solid var(--gray-100);
-            width: 100%;
-        }
         .input-group:has(input[asp-for="Name"]) {
             grid-area: name;
         }
@@ -420,16 +443,6 @@ nav {
         }
         .select-group {
             grid-area: select;
-            position: relative;
-            .icon {
-                position: absolute;
-                width: 15px;
-                height: 15px;
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                text-align: center;
-            }
         }
         button[type="submit"] {
             grid-area: submit;
