@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using Umbraco.Cms.Core.Models;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using OnatrixCMS.ViewModels
+@{
+	var content = (ContentModels.PartnersSection)Model.Content;
+	var logos = content.Value<IEnumerable<MediaWithCrops>>("partnerLogos") ?? [];
+}
+
+<section class="partners">
+	<div class="container">
+		<div class="logos">
+			@foreach (var l in logos)
+			{
+				<div class="logo-box">
+					<img src="@l.Url()" />
+				</div>
+			}
+		</div>
+	</div>
+</section>

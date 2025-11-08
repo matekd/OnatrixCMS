@@ -21,6 +21,9 @@
 
     --text-clr: var(--gray-600);
     --header-clr: var(--gray-700);
+    --main-clr: var(--gray-700);
+    --body-font-size: 14px;
+    --text-sixe: .875rem; /* 14px */
 
     --font-bold: 700;
     --font-semi-bold: 600;
@@ -28,16 +31,12 @@
     --font-regular: 400;
     --font-light: 300;
 
-    --body-font-size: 14px;
-    --text-sixe: .875rem; /* 14px */
-
-    --desktop-width: 1024px;
+    --desktop-width: 1320px; /* Breakpoint at 1400px */
     --tablet-width: 768px;
     --mobile-width: 480px;
-
-    --main-clr: var(--gray-700);
     --section-width: var(--desktop-width);
-    
+
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     --debug-border: dashed 1px red;
 }
 
@@ -126,6 +125,10 @@ a:visited {
 }
 .semi-bold {
     font-weight: var(--font-semi-bold);
+}
+/* drop shadow */
+.ds {
+    box-shadow: var(--shadow);
 }
 
 /* --- Forms --- */
@@ -511,6 +514,14 @@ nav {
             grid-area: submit;
             margin: auto;
         }
+    }
+}
+
+.partners {
+    padding-block: 2rem;
+    .logos {
+        display: flex;
+        justify-content: space-evenly;
     }
 }
 
