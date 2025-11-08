@@ -19,7 +19,6 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
     {
         if (!ModelState.IsValid)
         {
-            // Handle error
             return CurrentUmbracoPage();
         }
 
@@ -27,11 +26,11 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
 
         if (!result)
         {
-            // Handle error
+            TempData["FormError"] = "Something went wrong.";
             return RedirectToCurrentUmbracoPage();
         }
 
-        // Handle success
+        TempData["FormSuccess"] = "Your request has been saved.";
         return RedirectToCurrentUmbracoPage();
     }
 }

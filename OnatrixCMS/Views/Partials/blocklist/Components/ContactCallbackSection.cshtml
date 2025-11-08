@@ -3,6 +3,15 @@
 @using OnatrixCMS.ViewModels
 @{
 	var content = (ContentModels.ContactCallbackSection)Model.Content;
+	var settings = Model.Settings as ContentModels.CallbackFormSettings;
+
+	var options = settings?.FormOptions ?? [];
+
+	var callbackForm = new CallbackViewModel
+		{
+			IsMainSubmitButton = true,
+			Options = options
+		};
 }
 
 <section class="contact-callback">
@@ -29,6 +38,15 @@
 			}
 		</div>
 
-		<partial name="Partials/Forms/_CallbackForm" model="new CallbackViewModel()" />
+		<partial name="Partials/Forms/_CallbackForm" model="@callbackForm" />
+
+		@if (TempData["FormSuccess"] != null)
+		{
+			<div class="success-message">@TempData["FormSuccess"]</div>
+		}
+		else if (TempData["FormError"] != null)
+		{
+			<div class="error-message">@TempData["FormError"]</div>
+		}
 	</div>
 </section>

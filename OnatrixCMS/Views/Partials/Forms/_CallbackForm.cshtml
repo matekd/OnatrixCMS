@@ -27,9 +27,10 @@
 			@* <label asp-for="PhoneNumber"></label> *@
 			<select asp-for="SelectedOption">
 				<option class="placeholder" value="" disabled hidden selected>Please select an option</option>
-				<option value="Financial consulting">Financial consulting</option>
-				<option value="Statistics">Statistics</option>
-				<option value="Risk management">Risk management</option>
+				@foreach (var opt in Model.Options)
+				{
+					<option value="@opt">@opt</option>
+				}
 			</select>
 
 			<span class="icon flex-center">
@@ -39,6 +40,6 @@
 			<span asp-validation-for="SelectedOption"></span>
 		</div>
 
-		<button class="btn-main" type="submit">Submit</button>
+		<button class="@(Model.IsMainSubmitButton ? "btn-main" : "btn-sub")" type="submit">Submit</button>
 	</div>
 }

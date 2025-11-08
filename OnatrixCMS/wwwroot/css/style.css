@@ -183,6 +183,23 @@ input:focus, select:focus, textarea:focus {
         text-align: center;
     }
 }
+.success-message, .error-message {
+    font-size: 1rem;
+    font-weight: var(--font-semi-bold);
+    padding: 1rem;
+    align-self: self-start;
+    border-radius: .25rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+.success-message {
+    color: rgba(0, 128, 0, 0.75);
+    background-color: rgba(0, 128, 0, 0.1);
+}
+.error-message {
+    color: rgba(255, 0, 0, 0.75);
+    background-color: rgba(128,0 , 0, 0.1);
+}
 
 /* --- SECTIONS --- */
 .topbar {
