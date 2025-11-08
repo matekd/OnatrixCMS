@@ -121,6 +121,12 @@ a:visited {
     font-weight: var(--font-bold);
     color: var(--beige);
 }
+.italic {
+    font-style: italic;
+}
+.semi-bold {
+    font-weight: var(--font-semi-bold);
+}
 
 /* --- Forms --- */
 input::placeholder {
@@ -408,6 +414,43 @@ nav {
 }
 .contact {
     background-color: var(--white-300);
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        .img-div {
+            padding-top: 4rem;
+            height: 640px;
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .contact-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-left: 4rem;
+        .contact-info {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: .25rem;
+            i {
+                grid-row-start: 1;
+                grid-row-end: 3;
+                height: 21px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--beige);
+                font-size: 1rem;
+            }
+            p {
+                color: var(--main-clr);
+            }
+        }
+    }
 }
 
 .contact-callback {
