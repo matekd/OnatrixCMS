@@ -11,11 +11,11 @@
     var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
 }
 <section class="@(settings!.ShowServiceLabel ? "services" : "services light")">
-    <div>
+    <div class="container">
         <div class="services-header">
             @if (settings!.ShowServiceLabel)
             {
-                <p class="service-label">@content.ServiceLabel</p>
+                <p class="label">@content.ServiceLabel</p>
             }
 
             <div class="service-title">

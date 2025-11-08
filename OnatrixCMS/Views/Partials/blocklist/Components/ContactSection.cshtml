@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactSection)Model.Content;
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault()!;
+    
+    var sectionSettings = Model.Settings as ContentModels.ContactSettings;
+}
+
+<section class="contact @(sectionSettings!.ContactBgColor!.ToString() == "#FFF" ? "light" : "")">
+    <div class="container">
+        @if (content.ContactImage != null)
+        {
+            <div class="img-div">
+                <img src="@content.ContactImage.Url()" />
+            </div>
+        }
+        <div class="contact-body">
+            <h2>@content.ContactTitle</h2>
+
+            @if (siteSettings.ContactAddress != null)
+            {
+                <div class="contact-info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="semi-bold">Office location</p>
+                    <p>siteSettings.ContactAddress</p>
+                </div>
+            }
+            @if (siteSettings.ContactPhone != null)
+            {
+                <div class="contact-info">
+                    <i class="fa-solid fa-phone"></i>
+                    <p class="semi-bold">Office location</p>
+                    <p class="italic">siteSettings.ContactPhone</p>
+                </div>
+            }
+            @if (siteSettings.ContactEmail != null)
+            {
+                <div class="contact-info">
+                    <i class="fa-regular fa-envelope"></i>
+                    <p class="semi-bold">Office location</p>
+                    <p class="italic">siteSettings.ContactEmail</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
