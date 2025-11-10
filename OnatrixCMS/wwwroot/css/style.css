@@ -126,6 +126,9 @@ a:visited {
 .semi-bold {
     font-weight: var(--font-semi-bold);
 }
+.quote {
+    font-size: 1.25rem;
+}
 /* drop shadow */
 .ds {
     box-shadow: var(--shadow);
@@ -307,12 +310,50 @@ nav {
     }
 }
 
+.about-callback > div.container {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    padding-block: 6rem;
+    gap: 1rem;
+    .content {
+        display: grid;
+        gap: 3rem;
+        .content-body {
+            display: grid;
+            gap: 1rem;
+        }
+    }
+    .form-container {
+        position: relative;
+    }
+    .form-box {
+        position: absolute;
+        inset: -12rem 0 0 0;
+        .form-header h3 {
+            padding: 2rem;
+            background-color: var(--main-clr);
+            color: var(--white-200);
+        }
+        .form {
+            padding: 2rem;
+            background-color: var(--white-100);
+            > p {
+                padding-bottom: 1rem;
+            }
+            .form-body {
+                display: grid;
+                gap: 1.5rem;
+            }
+        }
+    }
+}
+
 .services.light {
     background-color: var(--white-100);
 }
 .services {
     background-color: var(--white-300);
-    > div {
+    > div.container {
         display: grid;
         justify-content: center;
         padding-block: 4rem;

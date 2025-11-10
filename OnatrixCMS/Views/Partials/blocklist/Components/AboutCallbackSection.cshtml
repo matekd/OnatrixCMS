@@ -9,22 +9,47 @@
 
 	var callbackForm = new CallbackViewModel
 	{
-		IsMainSubmitButton = true,
+		IsMainSubmitButton = false,
 		Options = options
 	};
 }
 
 <section class="about-callback">
 	<div class="container">
-		<partial name="Partials/Forms/_CallbackForm" model="@callbackForm" />
+		<div class="content">
+			<div class="content-header">
+				<p class="label">section label</p>
+				<h2>section title</h2>
+			</div>
+			<div class="content-body">
+				<p class="quote italic">section quote</p>
+				<p>section body</p>
+				<img src="">
+				<p>ceo name - title</p>
+			</div>
+		</div>
 
-		@if (TempData["FormSuccess"] != null)
-		{
-			<div class="success-message">@TempData["FormSuccess"]</div>
-		}
-		else if (TempData["FormError"] != null)
-		{
-			<div class="error-message">@TempData["FormError"]</div>
-		}
+		<div class="form-container">
+			<div class="form-box">
+				<div class="form-header">
+					<h3>form label</h3>
+				</div>
+
+				<div class="form ds">
+					<p class="italic">form body text</p>
+
+					<partial name="Partials/Forms/_CallbackForm" model="@callbackForm" />
+
+					@if (TempData["FormSuccess"] != null)
+					{
+						<div class="success-message">@TempData["FormSuccess"]</div>
+					}
+					else if (TempData["FormError"] != null)
+					{
+						<div class="error-message">@TempData["FormError"]</div>
+					}
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
