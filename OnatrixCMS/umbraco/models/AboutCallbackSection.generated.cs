@@ -48,5 +48,69 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// Body
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutBody")]
+		public virtual string AboutBody => this.Value<string>(_publishedValueFallback, "aboutBody");
+
+		///<summary>
+		/// Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutLabel")]
+		public virtual string AboutLabel => this.Value<string>(_publishedValueFallback, "aboutLabel");
+
+		///<summary>
+		/// Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutName")]
+		public virtual string AboutName => this.Value<string>(_publishedValueFallback, "aboutName");
+
+		///<summary>
+		/// Quote
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutQuote")]
+		public virtual string AboutQuote => this.Value<string>(_publishedValueFallback, "aboutQuote");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutTitle")]
+		public virtual string AboutTitle => this.Value<string>(_publishedValueFallback, "aboutTitle");
+
+		///<summary>
+		/// Form Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("formText")]
+		public virtual string FormText => this.Value<string>(_publishedValueFallback, "formText");
+
+		///<summary>
+		/// Form Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("formTitle")]
+		public virtual string FormTitle => this.Value<string>(_publishedValueFallback, "formTitle");
+
+		///<summary>
+		/// Signature
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("signatureImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops SignatureImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "signatureImage");
 	}
 }

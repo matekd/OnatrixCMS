@@ -18,25 +18,28 @@
 	<div class="container">
 		<div class="content">
 			<div class="content-header">
-				<p class="label">section label</p>
-				<h2>section title</h2>
+				<p class="label">@content.AboutLabel</p>
+				<h2>@content.AboutTitle</h2>
 			</div>
 			<div class="content-body">
-				<p class="quote italic">section quote</p>
-				<p>section body</p>
-				<img src="">
-				<p>ceo name - title</p>
+				<p class="quote italic">@content.AboutQuote</p>
+				<p>@content.AboutBody</p>
+				@if (content.SignatureImage != null)
+				{
+					<img src="@content.SignatureImage.Url()">
+				}
+				<p>@content.AboutName</p>
 			</div>
 		</div>
 
 		<div class="form-container">
 			<div class="form-box">
 				<div class="form-header">
-					<h3>form label</h3>
+					<h3>@content.FormTitle</h3>
 				</div>
 
 				<div class="form ds">
-					<p class="italic">form body text</p>
+					<p class="italic">@content.FormText</p>
 
 					<partial name="Partials/Forms/_CallbackForm" model="@callbackForm" />
 
