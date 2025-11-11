@@ -9,22 +9,50 @@
 
 	var callbackForm = new CallbackViewModel
 	{
-		IsMainSubmitButton = true,
+		IsMainSubmitButton = false,
 		Options = options
 	};
 }
 
 <section class="about-callback">
 	<div class="container">
-		<partial name="Partials/Forms/_CallbackForm" model="@callbackForm" />
+		<div class="content">
+			<div class="content-header">
+				<p class="label">@content.AboutLabel</p>
+				<h2>@content.AboutTitle</h2>
+			</div>
+			<div class="content-body">
+				<p class="quote italic">@content.AboutQuote</p>
+				<p>@content.AboutBody</p>
+				@if (content.SignatureImage != null)
+				{
+					<img src="@content.SignatureImage.Url()">
+				}
+				<p>@content.AboutName</p>
+			</div>
+		</div>
 
-		@if (TempData["FormSuccess"] != null)
-		{
-			<div class="success-message">@TempData["FormSuccess"]</div>
-		}
-		else if (TempData["FormError"] != null)
-		{
-			<div class="error-message">@TempData["FormError"]</div>
-		}
+		<div class="form-container">
+			<div class="form-box">
+				<div class="form-header">
+					<h3>@content.FormTitle</h3>
+				</div>
+
+				<div class="form ds">
+					<p class="italic">@content.FormText</p>
+
+					<partial name="Partials/Forms/_CallbackForm" model="@callbackForm" />
+
+					@if (TempData["FormSuccess"] != null)
+					{
+						<div class="success-message">@TempData["FormSuccess"]</div>
+					}
+					else if (TempData["FormError"] != null)
+					{
+						<div class="error-message">@TempData["FormError"]</div>
+					}
+				</div>
+			</div>
+		</div>
 	</div>
 </section>

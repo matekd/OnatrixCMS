@@ -126,6 +126,9 @@ a:visited {
 .semi-bold {
     font-weight: var(--font-semi-bold);
 }
+.quote {
+    font-size: 1.25rem;
+}
 /* drop shadow */
 .ds {
     box-shadow: var(--shadow);
@@ -307,12 +310,50 @@ nav {
     }
 }
 
+.about-callback > div.container {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    padding-block: 6rem;
+    gap: 1rem;
+    .content {
+        display: grid;
+        gap: 3rem;
+        .content-body {
+            display: grid;
+            gap: 1rem;
+        }
+    }
+    .form-container {
+        position: relative;
+    }
+    .form-box {
+        position: absolute;
+        inset: -12rem 0 0 0;
+        .form-header h3 {
+            padding: 2rem;
+            background-color: var(--main-clr);
+            color: var(--white-200);
+        }
+        .form {
+            padding: 2rem;
+            background-color: var(--white-100);
+            > p {
+                padding-bottom: 1rem;
+            }
+            .form-body {
+                display: grid;
+                gap: 1.5rem;
+            }
+        }
+    }
+}
+
 .services.light {
     background-color: var(--white-100);
 }
 .services {
     background-color: var(--white-300);
-    > div {
+    > div.container {
         display: grid;
         justify-content: center;
         padding-block: 4rem;
@@ -513,6 +554,72 @@ nav {
         button[type="submit"] {
             grid-area: submit;
             margin: auto;
+        }
+    }
+}
+
+.story > .container {
+    .content {
+        position: relative;
+        display: grid;
+        gap: 2rem;
+        text-align: center;
+        padding-top: 4rem;
+        .btn-main {
+            width: fit-content;
+            margin: auto;
+        }
+        .fg {
+            padding-top: 2rem;
+            img {
+                height: 100%;
+            }
+        }
+        .bg {
+            position: absolute;
+            inset: auto 0 0 0;
+            z-index: -1;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.success {
+    background-color: var(--main-clr);
+    .container {
+        min-height: 800px;
+        position: relative;
+        text-align: center;
+        padding-top: 4rem;
+        margin-bottom: 10rem;
+        .header h2 {
+            color: var(--white-100);
+        }
+        .statistics {
+            align-items: start;
+            .statistic-item {
+                flex-basis: 100%;
+            }
+            .number {
+                color: var(--beige);
+                font-size: 100px;
+            }
+            .text {
+                color: var(--white-100);
+                font-size: 1.125rem;
+            }
+        }
+        .bg-image {
+            position: absolute;
+            inset: 5rem 0 0 0;
+        }
+        .image {
+            position: absolute;
+            inset: auto 0 -10rem 0;
         }
     }
 }
