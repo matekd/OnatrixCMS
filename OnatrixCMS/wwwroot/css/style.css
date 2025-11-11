@@ -558,6 +558,33 @@ nav {
     }
 }
 
+.story > .container {
+    .content {
+        position: relative;
+        display: grid;
+        gap: 2rem;
+        text-align: center;
+        padding-top: 4rem;
+        .btn-main {
+            width: fit-content;
+            margin: auto;
+        }
+        .fg {
+            padding-top: 2rem;
+        }
+        .bg {
+            position: absolute;
+            inset: auto 0 0 0;
+            z-index: -1;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
 .partners {
     padding-block: 2rem;
     .logos {
