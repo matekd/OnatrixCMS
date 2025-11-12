@@ -385,10 +385,12 @@ nav {
     }
 }
 
-.team {
-    > div {
+.team .container {
+    padding-block: 6rem;
+    .team-header {
+        text-align: center;
         display: grid;
-        justify-content: center;
+        padding-bottom: 3rem;
     }
     img {
         width: 100%;
@@ -396,13 +398,20 @@ nav {
     }
     .team-list {
         display: grid;
-        /* grid-template-columns: repeat(12, 1fr); */
-        grid-template-columns: 1fr 1fr 1fr;
-        .col3 {
-            
+        gap: 3rem;
+        .row {
+            columns: 3;
+            gap: 2rem;
         }
-        .col4 {
-            
+        .row:last-child {
+            columns: 4;
+        }
+        .team-item {
+            display: grid;
+            border: 1px solid var(--white-400);
+            div {
+                padding: 1rem;
+            }
         }
     }
 }
