@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPageHeader>
+@using Umbraco.Cms.Core.Models
 @using Umbraco.Cms.Core.PublishedCache
 @using Umbraco.Cms.Core.Routing
 @using Umbraco.Cms.Core.Services.Navigation
@@ -19,7 +20,7 @@
 }
 
 <section class="bread-crumb">
-	<div>
+    <div class="container flex-between">
 		<h2>@Model.PageTitle</h2>
 		<div>
         @if (selection?.Length > 0)
@@ -33,7 +34,6 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </li>
             }
-
             @* Display the current page as the last item in the list *@
                 <li class="flex-center active">@Model.Name</li>
             </ul>
