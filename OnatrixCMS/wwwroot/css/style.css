@@ -653,6 +653,40 @@ nav {
     }
 }
 
+.reviews {
+    background-color: var(--white-300);
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        height: 500px;
+        .text {
+            padding-block: 4rem;
+            .quote {
+                padding-top: 1rem;
+                color: var(--gray-300);
+            }
+            .stars {
+                padding-block: 1rem;
+            }
+            .company {
+                font-size: 1.25rem;
+            }
+            .stars, .company, .name {
+                color: var(--dark-200);
+            }
+        }
+        .image {
+            position: relative;
+            height: inherit;
+            img {
+                position: absolute;
+                height: inherit;
+            }
+        }
+    }
+}
+
 footer {
     background-color: var(--dark-100);
     padding-block: 1rem;

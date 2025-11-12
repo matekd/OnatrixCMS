@@ -1,5 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
+    var content = (ContentModels.ReviewSection)Model.Content;
+    int starCount = content.ReviewRating;
 }
+
+<section class="reviews">
+    <div class="container">
+        <div class="text">
+            <p class="label">@content.ReviewLabel</p>
+            <h2>@content.ReviewTitle</h2>
+            <p class="italic quote">@content.ReviewText</p>
+
+            <div class="stars">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    if (i <= starCount)
+                    {
+                        <i class="fa-solid fa-star"></i>
+                    }
+                    else
+                    {
+                        <i class="fa-regular fa-star"></i>
+                    }
+                }
+            </div>
+
+            <p class="name">@content.ReviewReviewerName</p>
+            <p class="company italic">@content.ReviewReviewerCompany</p>
+        </div>
+        <div class="image">
+            @if (content.ReviewImage != null)
+            {
+                <img src="@content.ReviewImage.Url()">
+            }
+        </div>
+    </div>
+</section>
