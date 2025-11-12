@@ -10,5 +10,14 @@
         <h4>@content.QuestionTitle</h4>
         
         <partial name="Partials/Forms/_QuestionForm" model="new QuestionViewModel()"/>
+
+		@if (TempData["FormSuccess"] != null)
+		{
+			<div class="success-message">@TempData["FormSuccess"]</div>
+		}
+		else if (TempData["FormError"] != null)
+		{
+			<div class="error-message">@TempData["FormError"]</div>
+		}
     </div>
 </section>
