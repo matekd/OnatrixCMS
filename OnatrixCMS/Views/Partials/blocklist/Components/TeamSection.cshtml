@@ -14,18 +14,24 @@
                 @Html.Raw(content.TeamTitle)
             </div>
         </div>
-
         <div class="team-list">
             @if (teamList != null)
-                for (int i = 0; i < teamList.Count; i++)
-                {
-                    var member = teamList[i];
-                    var colClass = i < 3 ? "3" : "4";
-
-                    <div class="@colClass">
+            {
+                <div class="row">
+                    @for (int i = 0; i < 3; i++)
+                    {
+                        var member = teamList[i];
                         <partial name="Partials/Blocklist/Components/TeamMember" model="member" />
-                    </div>
-                }
+                    }
+                </div>
+                <div class="row">
+                    @for (int i = 3; i < 7; i++)
+                    {
+                        var member = teamList[i];
+                        <partial name="Partials/Blocklist/Components/TeamMember" model="member" />
+                    }
+                </div>
+            }
         </div>
     </div>
 </section>
