@@ -33,4 +33,23 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
         TempData["FormSuccess"] = "Your request has been saved.";
         return RedirectToCurrentUmbracoPage();
     }
+
+    public IActionResult HandleSupportForm(SupportViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+
+        var result = _formSubmissionService.SaveSupportRequest(model);
+
+        if (!result)
+        {
+            TempData["FormError"] = "Something went wrong.";
+            return RedirectToCurrentUmbracoPage();
+        }
+
+        TempData["FormSuccess"] = "Your request has been saved.";
+        return RedirectToCurrentUmbracoPage();
+    }
 }
