@@ -1,0 +1,9 @@
+﻿@using OnatrixCMS.ViewModels
+@model SupportViewModel
+
+@using (Html.BeginUmbracoForm("HandleSupportForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "supportForm" }))
+{
+	<input asp-for="Email" placeholder="@Html.DisplayNameFor(x => x.Email)" />
+
+	<button class="btn-icon flex-center" type="submit"><i class="fa-regular fa-envelope"></i></button>
+}

@@ -418,9 +418,14 @@ nav {
 
 .service-detail {
     padding-block: 4rem;
-    > div {
+    .container {
         display: grid;
         grid-template-columns: 2fr 5fr;
+        gap: 2rem;
+    }
+    aside > div {
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
     }
     .vl {
@@ -462,6 +467,46 @@ nav {
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+.support-form {
+    position: relative;
+    background-color: var(--main-clr);
+    padding: 1.5rem;
+    display: grid;
+    gap: 2rem;
+    border-radius: .25rem;
+    p {
+        color: var(--white-100);
+    }
+    .title {
+        font-size: 1.25rem;
+    }
+    img {
+        position: absolute;
+        inset: auto 0 0 auto;
+    }
+    form {
+        z-index: 1;
+        position: relative;
+        .btn-icon {
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            background-color: transparent;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--main-clr);
+            transition: all .1s;
+            &:hover {
+                color: var(--dark-100);
+                font-size: 1.25rem;
+            }
+        }
     }
 }
 
@@ -566,6 +611,29 @@ nav {
         button[type="submit"] {
             grid-area: submit;
             margin: auto;
+        }
+    }
+}
+
+.question .container {
+    display: grid;
+    gap: 1rem;
+    padding-block: 1rem;
+    form {
+        display: grid;
+        gap: 1rem;
+        .sender {
+            display: flex;
+            gap: 2rem;
+            .input-group {
+                width: 100%;
+            }
+        }
+        .question-area textarea {
+            min-height: 200px;
+        }
+        .btn-main {
+            width: fit-content;
         }
     }
 }

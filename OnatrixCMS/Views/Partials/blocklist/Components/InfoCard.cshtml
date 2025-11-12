@@ -4,11 +4,11 @@
     var content = (ContentModels.InfoCard)Model.Content;
 }
 
-<aside class="info-aside">
+<div class="info-aside">
     <h5>@content.InfoTitle</h5>
     @if (content.InfoImage != null)
     {
         <img src="@content.InfoImage.Url()"/>
     }
     <p>@content.InfoText</p>
-</aside>
+</div>

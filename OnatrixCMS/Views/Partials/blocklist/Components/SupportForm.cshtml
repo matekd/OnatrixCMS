@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using OnatrixCMS.ViewModels
+@{
+    var content = (ContentModels.SupportForm)Model.Content;
+}
+
+<div class="support-form">
+    <p class="semi-bold title">@content.FormTitle</p>
+    <p>@content.FormBody</p>
+
+    <partial name="Partials/Forms/_SupportForm" model="new SupportViewModel()">
+
+    @if (content.FormBgImage != null)
+    {
+        <img src="@content.FormBgImage.Url()">
+    }
+</div>
