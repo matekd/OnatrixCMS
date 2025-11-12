@@ -615,6 +615,29 @@ nav {
     }
 }
 
+.question .container {
+    display: grid;
+    gap: 1rem;
+    padding-block: 1rem;
+    form {
+        display: grid;
+        gap: 1rem;
+        .sender {
+            display: flex;
+            gap: 2rem;
+            .input-group {
+                width: 100%;
+            }
+        }
+        .question-area textarea {
+            min-height: 200px;
+        }
+        .btn-main {
+            width: fit-content;
+        }
+    }
+}
+
 .story > .container {
     .content {
         position: relative;
