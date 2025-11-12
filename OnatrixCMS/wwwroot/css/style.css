@@ -321,6 +321,9 @@ nav {
         .content-body {
             display: grid;
             gap: 1rem;
+            .quote {
+                font-weight: var(--font-light);
+            }
         }
     }
     .form-container {
@@ -629,6 +632,24 @@ nav {
     .logos {
         display: flex;
         justify-content: space-evenly;
+    }
+}
+
+.about .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding-block: 5rem;
+    .image .name {
+        font-size: 1rem;
+    }
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .quote {
+            font-weight: var(--font-light);
+        }
     }
 }
 
