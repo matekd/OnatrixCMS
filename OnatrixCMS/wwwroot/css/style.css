@@ -253,12 +253,12 @@ nav {
 }
 
 .bread-crumb {
-    background-image: url("~/assets/globeBg1.svg"), url("~/assets/globeBg2.svg");
+    background-image: url("../assets/globeBg1.svg"), url("../assets/globeBg2.svg");
     background-position: bottom left, top right;
     background-repeat: no-repeat, no-repeat;
     background-color: var(--white-300);
     padding: 5rem;
-    > div {
+    .container {
         display: grid;
         justify-content: center;
         gap: 1rem;

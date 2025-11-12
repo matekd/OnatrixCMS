@@ -20,7 +20,7 @@
 }
 
 <section class="bread-crumb">
-	<div>
+    <div class="container flex-between">
 		<h2>@Model.PageTitle</h2>
 		<div>
         @if (selection?.Length > 0)
@@ -34,7 +34,6 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </li>
             }
-            <img src="~/assets/globeBg1.svg"/>
             @* Display the current page as the last item in the list *@
                 <li class="flex-center active">@Model.Name</li>
             </ul>
