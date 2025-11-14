@@ -34,14 +34,12 @@
     --desktop-width: 1320px; /* Breakpoint at 1400px */
     --tablet-width: 768px;
     --mobile-width: 480px;
-    --section-width: var(--desktop-width);
+    /* --section-width: var(--desktop-width); */
+    --section-width: 100%;
 
     --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     --debug-border: dashed 1px red;
 }
-
-/* MEDIA */
-
 
 /* --- BASE --- */
 *, *::before, *::after {
@@ -114,7 +112,8 @@ a:visited {
 }
 .container {
     width: var(--section-width);
-    margin: auto;
+    margin: 0;
+    padding-inline: 1rem;
 }
 .label {
     font-weight: var(--font-bold);
@@ -234,6 +233,7 @@ input:focus, select:focus, textarea:focus {
 nav {
     color: var(--main-clr);
     padding-block: 1rem;
+    flex-wrap: wrap;
     ul {
         list-style: none;
         display: flex;
@@ -265,6 +265,7 @@ nav {
     }
     ul {
         list-style: none;
+        flex-wrap: wrap;
         gap: .75rem;
         li {
             gap: inherit;
@@ -310,9 +311,9 @@ nav {
     }
 }
 
-.about-callback > div.container {
+.about-callback > .container {
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 1fr;
     padding-block: 6rem;
     gap: 1rem;
     .content {
@@ -330,8 +331,8 @@ nav {
         position: relative;
     }
     .form-box {
-        position: absolute;
-        inset: -12rem 0 0 0;
+        position: relative;
+        inset: initial;
         .form-header h3 {
             padding: 2rem;
             background-color: var(--main-clr);
@@ -356,7 +357,7 @@ nav {
 }
 .services {
     background-color: var(--white-300);
-    > div.container {
+    > .container {
         display: grid;
         justify-content: center;
         padding-block: 4rem;
@@ -372,12 +373,14 @@ nav {
         }
     }
     .service-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
         .service-item{
             background-color: var(--white-100);
             border: 1px solid var(--white-400);
+            width: 372px;
             h5, p {
                 padding: 1.5rem;
             }
@@ -385,8 +388,10 @@ nav {
     }
 }
 
-.team .container {
-    padding-block: 6rem;
+.team {
+    .container {
+        padding-block: 6rem;
+    }
     .team-header {
         text-align: center;
         display: grid;
@@ -400,6 +405,9 @@ nav {
         display: grid;
         gap: 3rem;
         .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             columns: 3;
             gap: 2rem;
         }
@@ -420,8 +428,8 @@ nav {
     padding-block: 4rem;
     .container {
         display: grid;
-        grid-template-columns: 2fr 5fr;
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     aside > div {
         display: flex;
@@ -432,10 +440,10 @@ nav {
         border: 1px solid var(--white-400);
         width: 1px;
         height: 100%;
+        /*  */
+        display: none;
     }
     .service {
-        display: flex;
-        gap: 2rem;
         .content {
             display: grid;
             gap: 1rem;
@@ -517,12 +525,14 @@ nav {
     background-color: var(--white-300);
     .container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         align-items: center;
         padding-top: 4rem;
+        padding-inline: 0;
         .img-div {
             position: relative;
             height: 640px;
+            display: none;
             img {
                 position: absolute;
                 height: 100%;
@@ -534,7 +544,8 @@ nav {
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        padding-left: 4rem;
+        padding-inline: 1rem;
+        padding-bottom: 4rem;
         .contact-info {
             display: grid;
             grid-template-columns: auto 1fr;
@@ -575,7 +586,7 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 3rem;
+        padding: 3rem 1rem;
         background-color: var(--white-100);
     }
     .form-info {
@@ -590,11 +601,13 @@ nav {
     }
     .form-body {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas: 
-          "name email"
-          "phone select"
-          "submit submit";
+            "name"
+            "email"
+            "phone"
+            "select"
+            "submit";
         gap: 1rem;
         .input-group:has(input[asp-for="Name"]) {
             grid-area: name;
@@ -610,21 +623,23 @@ nav {
         }
         button[type="submit"] {
             grid-area: submit;
-            margin: auto;
         }
     }
 }
 
-.question .container {
-    display: grid;
-    gap: 1rem;
-    padding-block: 1rem;
+.question {
+    .container {
+        display: grid;
+        gap: 1rem;
+        padding-block: 1rem;
+    }
     form {
         display: grid;
         gap: 1rem;
         .sender {
-            display: flex;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
             .input-group {
                 width: 100%;
             }
@@ -632,13 +647,11 @@ nav {
         .question-area textarea {
             min-height: 200px;
         }
-        .btn-main {
-            width: fit-content;
-        }
     }
 }
 
 .story > .container {
+    display: grid;
     .content {
         position: relative;
         display: grid;
@@ -651,8 +664,10 @@ nav {
         }
         .fg {
             padding-top: 2rem;
+            margin: -6px;
             img {
-                height: 100%;
+                width: 100%;
+                height: auto;
             }
         }
         .bg {
@@ -675,32 +690,31 @@ nav {
         position: relative;
         text-align: center;
         padding-top: 4rem;
-        margin-bottom: 10rem;
-        .header h2 {
+    }
+    .header h2 {
+        color: var(--white-100);
+    }
+    .statistics {
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        .number {
+            color: var(--beige);
+            font-size: 100px;
+        }
+        .text {
             color: var(--white-100);
+            font-size: 1.125rem;
         }
-        .statistics {
-            align-items: start;
-            .statistic-item {
-                flex-basis: 100%;
-            }
-            .number {
-                color: var(--beige);
-                font-size: 100px;
-            }
-            .text {
-                color: var(--white-100);
-                font-size: 1.125rem;
-            }
-        }
-        .bg-image {
-            position: absolute;
-            inset: 5rem 0 0 0;
-        }
-        .image {
-            position: absolute;
-            inset: auto 0 -10rem 0;
-        }
+    }
+    .bg-image {
+        position: absolute;
+        inset: 5rem 0 0 0;
+    }
+    .image {
+        position: absolute;
+        inset: auto 0 -10rem 0;
+        display: none;
     }
 }
 
@@ -709,12 +723,15 @@ nav {
     .logos {
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
 
 .about .container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
     padding-block: 5rem;
     .image .name {
@@ -734,32 +751,33 @@ nav {
     background-color: var(--white-300);
     .container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 2rem;
         height: 500px;
-        .text {
-            padding-block: 4rem;
-            .quote {
-                padding-top: 1rem;
-                color: var(--gray-300);
-            }
-            .stars {
-                padding-block: 1rem;
-            }
-            .company {
-                font-size: 1.25rem;
-            }
-            .stars, .company, .name {
-                color: var(--dark-200);
-            }
+    }
+    .text {
+        padding-block: 4rem;
+        .quote {
+            padding-top: 1rem;
+            color: var(--gray-300);
         }
-        .image {
-            position: relative;
+        .stars {
+            padding-block: 1rem;
+        }
+        .company {
+            font-size: 1.25rem;
+        }
+        .stars, .company, .name {
+            color: var(--dark-200);
+        }
+    }
+    .image {
+        position: relative;
+        height: inherit;
+        display: none;
+        img {
+            position: absolute;
             height: inherit;
-            img {
-                position: absolute;
-                height: inherit;
-            }
         }
     }
 }
@@ -775,5 +793,101 @@ footer {
     span {
         
         color: var(--beige);
+    }
+}
+
+/* MEDIA */
+
+@media (min-width: 768px) {
+    .about .container {
+        grid-template-columns: 1fr 2fr;
+    }
+    .reviews .container {
+        padding-inline: 3rem;
+    }
+    .service-detail .container {
+        
+        grid-template-columns: 2fr auto 5fr;
+        .vl {
+            display: block;
+        }
+    }
+    .question form {
+        .sender {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .btn-main {
+            width: fit-content;
+        }
+    }
+    .contact-callback .container {
+        padding: 3rem;
+        .form-body {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "name email"
+                "phone select"
+                "submit submit";
+            button[type="submit"] {
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    :root {
+        --section-width: var(--desktop-width);
+        
+    }
+    body .container {
+        width: var(--section-width);
+        margin: auto;
+    }
+    .about-callback > .container {
+        grid-template-columns: 6fr 4fr;
+        .form-box {
+            position: absolute;
+            inset: -12rem 0 0 0;
+        }
+    }
+    .services .service-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .success {
+        .container {
+            margin-bottom: 10rem;
+        }
+        .statistics {
+            justify-content: space-between;
+        }
+        .image {
+            display: block;
+        }
+    }
+    .reviews .container {
+        grid-template-columns: 1fr 1fr;
+        padding-inline: 0;
+        .image {
+            display: block;
+        }
+    }
+    .team .container .team-list .row {
+        display: block;
+    }
+    .contact .container {
+        grid-template-columns: 1fr 1fr;
+        .contact-body {
+            padding-inline: 4rem 0;
+            padding-bottom: 0;
+        }
+        .img-div {
+            display: block;
+        }
+    }
+    .service-detail .container {
+        gap: 2rem;
     }
 }
