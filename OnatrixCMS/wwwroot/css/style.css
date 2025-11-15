@@ -695,7 +695,6 @@ nav {
         color: var(--white-100);
     }
     .statistics {
-        justify-content: center;
         gap: 2rem;
         flex-wrap: wrap;
         .number {
@@ -797,7 +796,6 @@ footer {
 }
 
 /* MEDIA */
-
 @media (min-width: 768px) {
     .about .container {
         grid-template-columns: 1fr 2fr;
@@ -861,7 +859,8 @@ footer {
             margin-bottom: 10rem;
         }
         .statistics {
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
         }
         .image {
             display: block;
